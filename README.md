@@ -9,3 +9,6 @@ add_two_numbers=https://leetcode.com/problems/add-two-numbers/
 
 
 palindrom_number=https://leetcode.com/problems/palindrome-number
+
+
+divide_two_integers=https://leetcode.com/problems/divide-two-integers/
