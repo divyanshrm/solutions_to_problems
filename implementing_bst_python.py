@@ -19,7 +19,9 @@ class bst:
                 self.left=bst(data)
             else:
                 self.left.insert(data)
-    def print_tree(self,order,c=0):
+    def print_tree(self,order='in',c=0):
+        if self.data is None:
+            return
         if self:
             if c==0:
                 if order.lower() in set(['pre','in','post']):
@@ -60,6 +62,8 @@ class bst:
             return
 
     def findval(self, lkpval):
+        if self.data is None:
+            return
         if lkpval < self.data:
             if self.left is None:
                 print( str(lkpval) + " Not Found")
@@ -74,6 +78,7 @@ class bst:
             print(str(self.data) + ' is found')
 def main():
     tree = bst()
+    tree.print_tree()
     tree.insert(5)
     tree.insert(3)
     tree.insert(7)
