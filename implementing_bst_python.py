@@ -1,5 +1,5 @@
 
-class node:
+class bst:
     def __init__(self,data=0,left=None,right=None):
         self.data=data
         self.left=left
@@ -8,19 +8,20 @@ class node:
     def insert(self,data):
         if data>=self.data:
             if self.right is None:
-                self.right=node(data)
+                self.right=bst(data)
             else:
                 self.right.insert(data)
         else:
             if self.left is None:
-                self.left=node(data)
+                self.left=bst(data)
             else:
                 self.left.insert(data)
     def print_tree(self,order,c=0):
-        if c==0:
-            if order.lower() in set(['pre','in','post']):
-                print(order+'order traversal: ')
-            c+=1
+        if self:
+            if c==0:
+                if order.lower() in set(['pre','in','post']):
+                    print(order+'order traversal: ')
+                c+=1
         if order.lower()=='in':
             if self:
                 if self.left:
@@ -68,12 +69,16 @@ class node:
             return self.right.findval(lkpval)
         else:
             print(str(self.data) + ' is found')
-tree=node(5)
-tree.insert(3)
-tree.insert(7)
-tree.insert(1)
-tree.insert(4)
-tree.print_tree('pre')
-tree.print_tree('post')
-tree.print_tree('in')
-tree.print_tree('invalid')
+def main():
+    tree = bst(5)
+    tree.insert(3)
+    tree.insert(7)
+    tree.insert(1)
+    tree.insert(4)
+    tree.print_tree('pre')
+    tree.print_tree('post')
+    tree.print_tree('in')
+if __name__=='__main__':
+    main()
+
+
