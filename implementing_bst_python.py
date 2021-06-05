@@ -1,11 +1,14 @@
 
 class bst:
-    def __init__(self,data=0,left=None,right=None):
+    def __init__(self,data=None,left=None,right=None):
         self.data=data
         self.left=left
         self.right=right
 
     def insert(self,data):
+        if self.data is None:
+            self.data=data
+            return
         if data>=self.data:
             if self.right is None:
                 self.right=bst(data)
@@ -70,7 +73,8 @@ class bst:
         else:
             print(str(self.data) + ' is found')
 def main():
-    tree = bst(5)
+    tree = bst()
+    tree.insert(5)
     tree.insert(3)
     tree.insert(7)
     tree.insert(1)
