@@ -66,7 +66,7 @@ class bst:
             return
         if lkpval < self.data:
             if self.left is None:
-                print( str(lkpval) + " Not Found")
+                print(str(lkpval) + " Not Found")
                 return
             return self.left.findval(lkpval)
         elif lkpval > self.data:
