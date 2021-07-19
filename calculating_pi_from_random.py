@@ -1,28 +1,25 @@
-import random
-import math
-def generate():
-    return [random.random(),random.random()]
-def distance(x,y):
-    #calculate distance from origin
-    x=pow(x,2)
-    y=pow(y,2)
-    ans=x+y
-    return math.sqrt(ans)
-def give(data):
 
-    c=0
-    for x in data:
-        if distance(x[0],x[1])<=1:
-            c+=1
-    return c
-def calculate_pi(n):
 
-    arr=[]
-    for x in range(n):
-        arr.append(generate())
-    return (give(arr)*4/n)
+def distance(x, y):
+    # calculate distance from origin
+    x = x*x
+    y = y*y
+    ans = x + y
+    return ans
 
-if __name__=='__main__':
-    x=input("enter the number of samples for accuracy, more the number of samples, more is the accuracy: ")
-    print(calculate_pi(int(x)))
+if __name__="__main__":
+    import random
+    #calculates the distance from the origin and appends the counter if the point is in the circle
+    c = 0
+    u = 1000000000
+    for _ in range(u):
+        x = random.random()
+        y = random.random()
+        if distance(x, y) < 1:
+            c += 1
+
+    print(c * 4 / u)
+
+
+
     
